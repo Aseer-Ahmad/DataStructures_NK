@@ -4,17 +4,17 @@ public class DynamicStack {
     
     private int capacity = 1;
     private int top = -1;
-    private int[] arr;
+    private char[] arr;
 
     public DynamicStack(){
-        arr = new int[capacity];
+        arr = new char[capacity];
     }
 
     public void doubleStackSize(){
         capacity = capacity * 2;
      
-        int[] temp = arr;
-        arr = new int[capacity];
+        char[] temp = arr;
+        arr = new char[capacity];
         for(int i = 0; i < capacity/2; i++)
             arr[i] = temp[i];        
         
@@ -26,6 +26,12 @@ public class DynamicStack {
         System.out.println();
     }
 
+    public char top(){
+        if( isEmpty()!=1 )
+            return arr[top];
+        return '~';
+
+    }
 
     public int isFull(){
         if(top == capacity - 1)
@@ -39,7 +45,7 @@ public class DynamicStack {
         return 0;
     }
 
-    public void push(int data){
+    public void push(char data){
         if( isFull() == 1){
             doubleStackSize();
             arr[++top] = data;
@@ -48,10 +54,10 @@ public class DynamicStack {
         }
     }
 
-    public int pop(){
+    public char pop(){
         if( isEmpty() == 1){
             System.out.println("Stack Empty");
-            return -1;
+            return '~';
         }else{
             return arr[top--];
         }
