@@ -5,6 +5,7 @@ public class DynamicCircularQueue {
     int capacity = 1;
     int[] arr;
     int front,rear;
+    int size = 0;
 
     public DynamicCircularQueue(){
         front = -1;
@@ -63,9 +64,13 @@ public class DynamicCircularQueue {
             }else{
                 front = (front+1)%capacity;
             }
+            //decrease size
+            size--;
             return data;
         }
     }
+
+    public int size(){ return size;}
 
     public void enqueue(int data){
         if(isFull()){
@@ -79,8 +84,11 @@ public class DynamicCircularQueue {
                 front = 0;
 
         }
+        //increase size
+        size++;
     }
 
+    
     public void print(){
         if(!isEmpty()){
             

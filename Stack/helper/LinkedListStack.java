@@ -6,9 +6,7 @@ public class LinkedListStack {
 
     LinkedListStack head;
 
-    public LinkedListStack(){
-
-    }
+    public LinkedListStack(){}
 
     public void print(){
         if(isEmpty() != 1){
@@ -19,6 +17,7 @@ public class LinkedListStack {
             }
             System.out.println(temp.data);
         }
+        System.out.println();
     }
 
     public void push(int data){
@@ -36,7 +35,7 @@ public class LinkedListStack {
         }else{
             int data = head.data;
             head = head.next;
-            System.out.println(data);
+            // System.out.println(data);
             return data;
         }
     }

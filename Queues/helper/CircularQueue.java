@@ -76,13 +76,13 @@ public class CircularQueue {
             if(front < rear){
                 for(int i = front; i <= rear; i++)
                     System.out.print(arr[i] + "-");
-                System.out.println();
+                // System.out.println();
             }else{
                 for(int i = front; i < capacity ; i++)
                     System.out.print(arr[i] + "-");
                 for(int i = 0; i <= rear; i++)
                     System.out.print(arr[i] + "-");
-                System.out.println();
+                // System.out.println();
             }
         }
     }
